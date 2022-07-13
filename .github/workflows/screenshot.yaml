@@ -1,0 +1,22 @@
+name: screenshot
+
+on:
+  schedule:
+  - cron: '0 10 * * *'
+
+jobs:
+  capa_de_jornal:
+    runs-on: macOS-latest
+    env:
+      GITHUB_PAT: ${{ secrets.PAT_GITHUB }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+
+      - name: Install packages
+        run: |   
+          install.packages("webshot2")         
+        shell: Rscript {0}
+        
+      - name: Take screenshots
+        run: Rscript screenshot_script.R
