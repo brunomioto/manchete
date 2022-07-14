@@ -15,8 +15,7 @@ jobs:
 
       - name: Install packages
         run: |   
-          install.packages("webshot2")         
-        shell: Rscript {0}
+          R -e 'install.packages("webshot2")'
         
       - name: Take screenshots
         run: Rscript screenshot_script.R
