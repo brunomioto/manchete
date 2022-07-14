@@ -1,0 +1,27 @@
+name: screenshot_test
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: false
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+
+jobs:
+  capa_de_jornal:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.PAT_GITHUB }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+
+      - name: Install packages
+        run: |   
+          install.packages("webshot2")         
+        shell: Rscript {0}
+        
+      - name: Take screenshots
+        run: Rscript screenshot_script.R
