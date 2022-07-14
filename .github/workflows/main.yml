@@ -1,0 +1,24 @@
+name: screenshot2
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: false
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+
+jobs:
+  capa_de_jornal:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: r-lib/actions/setup-r@master
+
+      - name: Install packages
+        run: |   
+          R -e 'install.packages("webshot2")'
+        
+      - name: Take screenshots
+        run: Rscript screenshot_script.R
