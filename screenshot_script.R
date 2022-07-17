@@ -4,7 +4,7 @@ library(webshot2)
 portais <- data.frame(
   url = c("https://www.folha.uol.com.br",
           "https://www.estadao.com.br"),
-  file = paste("./screenshots/",c("folha","estadao"),".png")
+  file = paste0("./screenshots/",c("folha","estadao"),".png")
 )
 
 
