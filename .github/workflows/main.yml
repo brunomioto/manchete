@@ -33,7 +33,7 @@ jobs:
         uses: nick-fields/retry@v2
         with:
           timeout_minutes: 10
-          max_attempts: 3
+          max_attempts: 5
           retry_on: error
           continue_on_error: true
           command: Rscript screenshot_script.R
