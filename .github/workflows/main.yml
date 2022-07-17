@@ -32,7 +32,7 @@ jobs:
         id: retry
         uses: nick-fields/retry@v2
         with:
-          timeout_second: 10
+          timeout_seconds: 10
           max_attempts: 3
           retry_on: error
           command: Rscript screenshot_script.R
