@@ -35,4 +35,4 @@ jobs:
           timeout_second: 10
           max_attempts: 3
           retry_on: error
-        command: Rscript screenshot_script.R
+          command: Rscript screenshot_script.R
