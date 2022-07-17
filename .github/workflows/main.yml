@@ -17,6 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@master
+      
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
 
       - name: Install packages
         run: |   
@@ -24,4 +29,10 @@ jobs:
         shell: Rscript {0}
         
       - name: Take screenshots
-        run: Rscript screenshot_script.R
+        id: retry
+        uses: nick-fields/retry@v2
+        with:
+          timeout_second: 10
+          max_attempts: 3
+          retry_on: error
+        command: Rscript screenshot_script.R
