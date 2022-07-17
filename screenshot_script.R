@@ -3,7 +3,7 @@ library(webshot2)
 # Lista portais
 portais <- data.frame(
   url = c("https://www.folha.uol.com.br"),
-  file = paste0(c("folha"), ".png")
+  file = paste0("./screenshots/", c("folha"), ".png")
 )
 
 # Cria variaveis para guardar as condicoes do loop
