@@ -3,7 +3,7 @@ library(webshot2)
 # Lista portais
 portais <- data.frame(
   url = c("https://www.folha.uol.com.br",
-         "https://www.g1.globo.com",
+         "https://g1.globo.com/",
          "https://www.estadao.com.br"),
   file = paste0("./screenshots/", c("folha", "g1", "estadao"), ".png")
 )
