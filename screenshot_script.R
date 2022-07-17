@@ -18,8 +18,8 @@ while((cond_files & cond_tries)) {
   tries <- tries + 1
   
   # Efetua screenshot
-  webshot2::webshot(url = portais$url, vwidth = 2000, vheight = 2000,
-                    file = portais$file, delay = 5, cliprect = "viewport")
+  webshot2::webshot(url = portais$url, vwidth = 1500, vheight = 2000,
+                    file = portais$file, delay = 10, cliprect = "viewport")
   
   # Confirma que todas imagens foram criadas
   nomes <- list.files()
