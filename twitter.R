@@ -9,7 +9,11 @@ manchete_token <- rtweet::create_token(
 )
 
 # Build the status message
-tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"))
+tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"),"\n\n",
+       "- Folha de S. Paulo\n",
+       "- G1\n",
+       "- O Estado de S. Paulo\n",
+       "- Poder360")
 
 # Post the status message to Twitter
 rtweet::post_tweet(
