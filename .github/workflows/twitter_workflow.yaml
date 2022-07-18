@@ -28,11 +28,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@master
+      
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
 
       - name: Install packages
         run: |
           install.packages("rtweet")      
         shell: Rscript {0}
-        
+    
       - name: Create and post tweet
-        run: Rscript twitter.R
+        id: retry
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 5
+          retry_on: error
+          continue_on_error: true
+          command: Rscript twitter.R
+        
