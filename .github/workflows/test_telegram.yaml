@@ -1,0 +1,33 @@
+name: main
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: false
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+
+jobs:
+  capa_de_jornal:
+    runs-on: macOS-latest
+    env:
+      GITHUB_PAT: ${{ secrets.PAT_GITHUB }}
+      R_TELEGRAM_BOT_MANCHETE_BOT: ${{ secrets.R_TELEGRAM_BOT_MANCHETE_BOT }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+      
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+
+      - name: Install packages
+        run: |   
+          install.packages("telegram")
+        shell: Rscript {0}
+        
+      - name: Telegram
+        run: Rscript telegram.R
