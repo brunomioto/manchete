@@ -21,7 +21,7 @@ tier_1_files <- grep("_tier1", filelist, value = TRUE)
 # Build the status message
 tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"),"\n\n",
                             ifelse(isTRUE(grep("globo", tier_1_files, value = TRUE) == "screenshots/foto1_oglobo_tier1.png") == TRUE,
-                                   "- O Globo",""),
+                                   "- O Globo\n",""),
                             ifelse(isTRUE(grep("folha", tier_1_files, value = TRUE) == "screenshots/foto2_folha_tier1.png") == TRUE,
                                    "- Folha de S. Paulo\n",""),
                             ifelse(isTRUE(grep("estadao", tier_1_files, value = TRUE) == "screenshots/foto3_estadao_tier1.png") == TRUE,
@@ -53,7 +53,7 @@ tier_2_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
                             ifelse(isTRUE(grep("metropoles", tier_2_files, value = TRUE) == "screenshots/foto2_metropoles_tier2.png") == TRUE,
                                    "- Metrópoloes\n",""),
                             ifelse(isTRUE(grep("poder360", tier_2_files, value = TRUE) == "screenshots/foto3_poder360_tier2.png") == TRUE,
-                                   "- Poder360",""),
+                                   "- Poder360\n",""),
                             ifelse(isTRUE(grep("extra", tier_2_files, value = TRUE) == "screenshots/foto4_extra_tier2.png") == TRUE,
                                    "- Extra\n","")
 )
