@@ -17,6 +17,6 @@ rtweet::post_tweet(
   media = c("./screenshots/folha.png",
             "./screenshots/g1.png",
             "./screenshots/estadao.png",
-            "./screenshots/poder360.png")
+            "./screenshots/poder360.png"),
   token = manchete_token
 )
