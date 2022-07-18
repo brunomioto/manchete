@@ -22,7 +22,15 @@ portais <- tibble(
     ordem = paste0("foto", row_number(), "_"),
     file = paste0("./screenshots/", ordem, nome, tier, ".png")
   ) %>%
-  dplyr::ungroup() %>%
+  dplyr::ungroup()
+
+# Separa tiers
+portais_tier1 <- portais %>%
+  dplyr::filter(tier == "_tier1") %>% 
+  dplyr::select(url, file, nome)
+
+portais_tier2 <- portais %>%
+  dplyr::filter(tier == "_tier2") %>% 
   dplyr::select(url, file, nome)
 
 # Cria um wrapper em torno da função de screenshot que inclui delay e torna a função "verbose"
@@ -35,8 +43,14 @@ paparazzi <- function(url, file, nome) {
   Sys.sleep(5)
 }
 
-# Efetua o screenshot, um portal por vez
+# Efetua o screenshot, um portal por vez #tier 1
 purrr::pwalk(
-  .l = portais,
+  .l = portais_tier1,
+  .f = paparazzi
+)
+
+# Efetua o screenshot, um portal por vez #tier 2
+purrr::pwalk(
+  .l = portais_tier2,
   .f = paparazzi
 )
