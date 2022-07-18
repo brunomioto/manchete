@@ -3,6 +3,10 @@ name: manchete_tweet
 on:
   schedule:
   - cron: '0 13 * * *'
+  workflow_run:
+    workflows: [main]
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       logLevel:
