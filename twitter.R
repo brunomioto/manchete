@@ -24,10 +24,10 @@ tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
                                    "- Folha de S. Paulo\n",""),
                             ifelse(grep("estadao", tier_1_files, value = TRUE) == "screenshots/foto2_estadao_tier1.png",
                                    "- O Estado de S. Paulo\n",""),
-                            ifelse(grep("g1", tier_1_files, value = TRUE) == "screenshots/foto4_g1_tier1.png",
-                                   "- G1\n",""),
                             ifelse(grep("poder360", tier_1_files, value = TRUE) == "screenshots/foto3_poder360_tier1.png",
-                                   "- Poder360","")
+                                   "- Poder360",""),
+                            ifelse(grep("g1", tier_1_files, value = TRUE) == "screenshots/foto4_g1_tier1.png",
+                                   "- G1\n","")
 )
 
 # Post the status message to Twitter
