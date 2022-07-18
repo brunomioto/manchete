@@ -32,7 +32,7 @@ tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
 
 # Post the status message to Twitter
 rtweet::post_tweet(
-  #status = tier_1_tweet_text,
+  status = tier_1_tweet_text,
   media = tier_1_files,
   token = manchete_token
 )
