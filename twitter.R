@@ -9,7 +9,7 @@ manchete_token <- rtweet::create_token(
 )
 
 # Build the status message
-tweet_text <- paste0("Manchetes do dia ", format(Sys.Date(), format="%d/%m/%Y"))
+tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X"))
 
 # Post the status message to Twitter
 rtweet::post_tweet(
