@@ -1,4 +1,5 @@
 library(rtweet)
+library(httr)
 
 manchete_token <- rtweet::create_token(
   app = "Manchete",
@@ -8,19 +9,26 @@ manchete_token <- rtweet::create_token(
   access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
 
+## TIER 1
+
+#get file names
+req <- httr::GET("https://api.github.com/repos/brunomioto/manchete/git/trees/master?recursive=1")
+httr::stop_for_status(req) 
+filelist <- unlist(lapply(httr::content(req)$tree, "[", "path"), use.names = F)
+
+tier_1_files <- grep("_tier1", filelist, value = TRUE)
+
+
 # Build the status message
-tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"),"\n\n",
+tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"),"\n\n",
+       "- O Estado de S. Paulo\n",
        "- Folha de S. Paulo\n",
        "- G1\n",
-       "- O Estado de S. Paulo\n",
        "- Poder360")
 
 # Post the status message to Twitter
 rtweet::post_tweet(
-  status = tweet_text,
-  media = c("./screenshots/folha.png",
-            "./screenshots/g1.png",
-            "./screenshots/estadao.png",
-            "./screenshots/poder180.png"),
+  status = tier_1_tweet_text,
+  media = tier_1_files,
   token = manchete_token
 )
