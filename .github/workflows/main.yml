@@ -14,7 +14,6 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.PAT_GITHUB }}
-      R_TELEGRAM_BOT_MANCHETE_BOT: ${{ secrets.R_TELEGRAM_BOT_MANCHETE_BOT }}
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@master
@@ -27,7 +26,6 @@ jobs:
       - name: Install packages
         run: |   
           install.packages("webshot2")
-          install.packages("telegram")
         shell: Rscript {0}
         
       - name: Take screenshots
@@ -57,8 +55,5 @@ jobs:
           git add screenshots/*
           git commit -m "Latest data: ${timestamp}" || exit 0
           git push
-        
-      - name: Telegram
-        run: Rscript telegram.R
           
       
