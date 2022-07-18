@@ -37,8 +37,14 @@ portais_tier2 <- portais %>%
 paparazzi <- function(url, file, nome) {
   print(paste0("Fotografando ", nome, "..."))
   
-  webshot2::webshot(url = url, vwidth = 1500, vheight = 2000,
-                    file = file, delay = 25, cliprect = "viewport")
+  paths = paste0("./screenshots/",list.files("./screenshots"))
+  
+  if (!(file %in% paths)) {
+    webshot2::webshot(url = url, vwidth = 1500, vheight = 2000,
+                      file = file, delay = 25, cliprect = "viewport")
+  } else {
+    print(paste0("Fotografia de ", nome, " já encontrada! Seguindo..."))
+  }
   
   Sys.sleep(5)
 }
