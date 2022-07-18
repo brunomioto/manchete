@@ -16,8 +16,7 @@ req <- httr::GET("https://api.github.com/repos/brunomioto/manchete/git/trees/mas
 httr::stop_for_status(req) 
 filelist <- unlist(lapply(httr::content(req)$tree, "[", "path"), use.names = F)
 
-tier_1_files <- grep("_tier1", filelist, value = TRUE)
-
+tier_1_files <- grep("estadao.png|folha.png|g1.png|poder360.png", filelist, value = TRUE)
 
 # Build the status message
 tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"),"\n\n",
