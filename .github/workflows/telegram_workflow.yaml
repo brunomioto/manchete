@@ -1,5 +1,9 @@
 name: telegram
 on: 
+  workflow_run:
+    workflows: [main]
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       logLevel:
