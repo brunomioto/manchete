@@ -4,7 +4,7 @@
 Este é um projeto para salvar e publicar diariamente as principais
 manchetes dos jornais brasileiros.
 
-Atualmente são publcadas as capas do site dos jornais:
+Atualmente são publicadas as capas do site dos jornais:
 
 -   Folha de São Paulo
 -   G1
