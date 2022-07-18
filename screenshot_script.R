@@ -21,9 +21,9 @@ portais <- tibble(
   dplyr::mutate(
     ordem = paste0("foto", row_number(), "_"),
     file = paste0("./screenshots/", ordem, nome, tier, ".png")
-  ) %>% 
-  dplyr::select(url, file, nome) %>% 
-  dplyr::ungroup()
+  ) %>%  %>% 
+  dplyr::ungroup() %>%
+  dplyr::select(url, file, nome)
 
 # Cria um wrapper em torno da função de screenshot que inclui delay e torna a função "verbose"
 paparazzi <- function(url, file, nome) {
