@@ -4,18 +4,26 @@ library(dplyr)
 
 # Lista portais
 portais <- tibble(
-  url = c("https://www.folha.uol.com.br",
+  url = c("https://oglobo.globo.com/",
+          "https://www.folha.uol.com.br",
           "https://www.estadao.com.br",
+          "https://g1.globo.com/",
+          "https://istoe.com.br/",
+          "https://www.metropoles.com/",
           "https://www.poder360.com.br",
-          "https://g1.globo.com/"),
-  nome = c("folha", "estadao", "poder360", "g1"),
-  tier = c(rep("_tier1", 4))
+          "https://extra.globo.com/"),
+  nome = c("oglobo", "folha", "estadao", "g1",
+           "istoe", "metropoles", "poder360", "extra"),
+  tier = c(rep("_tier1", 4),
+           rep("_tier2", 4))
 ) %>% 
+  dplyr::group_by(tier) %>% 
   dplyr::mutate(
     ordem = paste0("foto", row_number(), "_"),
     file = paste0("./screenshots/", ordem, nome, tier, ".png")
   ) %>% 
-  dplyr::select(url, file, nome)
+  dplyr::select(url, file, nome) %>% 
+  dplyr::ungroup()
 
 # Cria um wrapper em torno da função de screenshot que inclui delay e torna a função "verbose"
 paparazzi <- function(url, file, nome) {
