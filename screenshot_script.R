@@ -21,7 +21,7 @@ portais <- tibble(
   dplyr::mutate(
     ordem = paste0("foto", row_number(), "_"),
     file = paste0("./screenshots/", ordem, nome, tier, ".png")
-  ) %>%  %>% 
+  ) %>%
   dplyr::ungroup() %>%
   dplyr::select(url, file, nome)
 
