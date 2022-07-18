@@ -23,7 +23,7 @@ tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
                             ifelse(isTRUE(grep("folha", tier_1_files, value = TRUE) == "screenshots/foto1_folha_tier1.png") == TRUE,
                                    "- Folha de S. Paulo\n",""),
                             ifelse(isTRUE(grep("estadao", tier_1_files, value = TRUE) == "screenshots/foto2_estadao_tier1.png") == TRUE,
-                                   "- O Estado de S. Paulo\n"," "),
+                                   "- O Estado de S. Paulo\n",""),
                             ifelse(isTRUE(grep("g1", tier_1_files, value = TRUE) == "screenshots/foto4_g1_tier1.png") == TRUE,
                                    "- G1\n",""),
                             ifelse(isTRUE(grep("poder360", tier_1_files, value = TRUE) == "screenshots/foto3_poder360_tier1.png") == TRUE,
