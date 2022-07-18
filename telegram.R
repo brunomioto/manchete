@@ -12,7 +12,7 @@ bot$sendMessage(paste0('Bom dia! Essas são as principais manchetes do dia ',
                        format(Sys.time(), format="%X", tz = "America/Sao_Paulo")
                        ))
 
-bot$sendPhoto('folha.png')
-bot$sendPhoto('g1.png')
-bot$sendPhoto('estadao.png')
-bot$sendPhoto('poder360.png')
+bot$sendPhoto('./screenshots/folha.png')
+bot$sendPhoto('./screenshots/g1.png')
+bot$sendPhoto('./screenshots/estadao.png')
+bot$sendPhoto('./screenshots/poder360.png')
