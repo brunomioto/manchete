@@ -16,19 +16,19 @@ req <- httr::GET("https://api.github.com/repos/brunomioto/manchete/git/trees/mas
 httr::stop_for_status(req) 
 filelist <- unlist(lapply(httr::content(req)$tree, "[", "path"), use.names = F)
 
-tier_1_files <- grep("estadao.png|folha.png|g1.png|poder360.png", filelist, value = TRUE)
+tier_1_files <- grep("_tier1", filelist, value = TRUE)
 
 # Build the status message
 tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"),"\n\n",
-                            ifelse(grep("folha.png", tier_1_files, value = TRUE) == "screenshots/folha.png",
+                            ifelse(grep("folha", tier_1_files, value = TRUE) == "screenshots/foto1_folha_tier1.png",
                                    "- Folha de S. Paulo\n",""),
-                            ifelse(grep("estadao.png", tier_1_files, value = TRUE) == "screenshots/estadao.png",
+                            ifelse(grep("estadao", tier_1_files, value = TRUE) == "screenshots/foto2_estadao_tier1.png",
                                    "- O Estado de S. Paulo\n",""),
-                            ifelse(grep("g1.png", tier_1_files, value = TRUE) == "screenshots/g1.png",
+                            ifelse(grep("g1", tier_1_files, value = TRUE) == "screenshots/foto4_g1_tier1.png",
                                    "- G1\n",""),
-                            ifelse(grep("poder360.png", tier_1_files, value = TRUE) == "screenshots/poder360.png",
+                            ifelse(grep("poder360", tier_1_files, value = TRUE) == "screenshots/foto3_poder360_tier1.png",
                                    "- Poder360","")
-                           )
+)
 
 # Post the status message to Twitter
 rtweet::post_tweet(
