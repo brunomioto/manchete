@@ -10,7 +10,7 @@ on:
         description: 'Test scenario tags'  
 
 jobs:
-  capa_de_jornal:
+  telegram_manchete:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.PAT_GITHUB }}
