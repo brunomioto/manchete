@@ -20,10 +20,15 @@ tier_1_files <- grep("estadao.png|folha.png|g1.png|poder360.png", filelist, valu
 
 # Build the status message
 tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%m/%Y %X", tz = "America/Sao_Paulo"),"\n\n",
-       "- O Estado de S. Paulo\n",
-       "- Folha de S. Paulo\n",
-       "- G1\n",
-       "- Poder360")
+       ifelse(grep("folha.png", filelist, value = TRUE) == "screenshots/folha.png",
+              "- Folha de S. Paulo\n",""),
+       ifelse(grep("estadao.png", filelist, value = TRUE) == "screenshots/estadao.png",
+              "- O Estado de S. Paulo\n",""),
+       ifelse(grep("g1.png", filelist, value = TRUE) == "screenshots/g1.png",
+              "- G1\n",""),
+       ifelse(grep("poder360.png", filelist, value = TRUE) == "screenshots/poder360.png",
+              "- Poder360","")
+       )
 
 # Post the status message to Twitter
 rtweet::post_tweet(
