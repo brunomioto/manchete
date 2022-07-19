@@ -1,4 +1,4 @@
-name: manchete_tweet
+name: twitter
 
 on:
   workflow_run:
