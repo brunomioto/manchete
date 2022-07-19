@@ -34,8 +34,19 @@ jobs:
         run: |-
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
-          git rm screenshots/*
+          git rm screenshots/*.png
+          git rm screenshots/.gitkeep
           git commit -m "Remove data: `date +'%Y-%m-%d %H:%M:%S'`" || exit 0
+          git push
+        
+      - name: Restore screenshots directory
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          mkdir screenshots
+          touch screenshots/.gitkeep
+          git add screenshots/.gitkeep
+          git commit -m "Restore directory: `date +'%Y-%m-%d %H:%M:%S'`" || exit 0
           git push
         
       - name: Take screenshots and partial commit
