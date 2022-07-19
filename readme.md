@@ -28,7 +28,7 @@ Atualmente são publicadas as capas do site dos jornais:
 
 **Siga o canal no Telegram: [Manchete](https://t.me/mancheteBR)**
 
-🕚 Atualizações das capas é feita diariamente às 11H 🕚
+🕗 Atualizações das capas é feita diariamente às 8H da manhã 🕗
 
 Baseado no projeto [News
 Homepages](https://palewi.re/docs/news-homepages/)
