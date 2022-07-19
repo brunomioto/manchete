@@ -2,7 +2,7 @@ name: twitter
 
 on:
   workflow_run:
-    workflows: [main]
+    workflows: [screenshot]
     types:
       - completed
   workflow_dispatch:
