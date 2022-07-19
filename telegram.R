@@ -6,7 +6,7 @@ bot <- TGBot$new(token = bot_token('MANCHETE_BOT'))
 bot$set_default_chat_id(-1001563823686)
 
 #send message
-bot$sendMessage(paste0('Bom dia! Essas são as principais manchetes do dia ',
+bot$sendMessage(paste0('Olá! Essas são as principais manchetes do dia ',
                        format(Sys.time(), format="%d/%m/%Y", tz = "America/Sao_Paulo"),
                        ' às ',
                        format(Sys.time(), format="%X", tz = "America/Sao_Paulo")
