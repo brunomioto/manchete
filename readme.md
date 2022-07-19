@@ -9,8 +9,8 @@
 
 <!-- badges: end -->
 
-Este é um projeto para salvar e publicar diariamente as principais
-manchetes dos jornais brasileiros.
+Este é um projeto para salvar e publicar diariamente as manchetes dos
+principais jornais brasileiros.
 
 Atualmente são publicadas as capas do site dos jornais:
 
@@ -23,12 +23,29 @@ Atualmente são publicadas as capas do site dos jornais:
 -   Poder360
 -   Extra
 
-Siga a conta no twitter: [MancheteBot](https://twitter.com/MancheteBot)
+**Siga a conta no Twitter:
+[MancheteBot](https://twitter.com/MancheteBot)**
 
-Siga o canal no telegram: [Manchete](https://t.me/mancheteBR)
+**Siga o canal no Telegram: [Manchete](https://t.me/mancheteBR)**
 
 Baseado no projeto [News
 Homepages](https://palewi.re/docs/news-homepages/)
+
+### Sobre o nosso projeto
+
+Todos os dias acompanhamos notícias que até poucos anos pareciam
+absurdas de serem contadas, e hoje já virou rotina. São notícias tristes
+de serem escritas pelos jornalistas e lidas pelos leitores, mas são
+notícias do nosso país. Não podemos nos esquecer delas para não
+repeti-las no futuro.
+
+Foi pensando nisso que criamos esse projeto para buscar diariamente as
+manchetes dos principais jornais brasileiros. Dessa forma, podemos
+acompanhar como as histórias são contadas ou mesmo não contadas.
+
+Esperamos de coração que muitas dessas tristes notícias que lemos hoje
+nunca mais sejam necesárias de serem escritas, que nunca mais nos falte
+**empatia**, **amor**, **humanidade**.
 
 **Criado por [Bruno Mioto](https://github.com/brunomioto) e [Ícaro
 Bernardes](https://github.com/IcaroBernardes)**
