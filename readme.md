@@ -28,6 +28,8 @@ Atualmente são publicadas as capas do site dos jornais:
 
 **Siga o canal no Telegram: [Manchete](https://t.me/mancheteBR)**
 
+🕚 Atualizações das capas é feita diariamente às 11H 🕚
+
 Baseado no projeto [News
 Homepages](https://palewi.re/docs/news-homepages/)
 
@@ -44,7 +46,7 @@ manchetes dos principais jornais brasileiros. Dessa forma, podemos
 acompanhar como as histórias são contadas ou mesmo não contadas.
 
 Esperamos de coração que muitas dessas tristes notícias que lemos hoje
-nunca mais sejam necesárias de serem escritas, que nunca mais nos falte
+nunca mais sejam necessárias de serem escritas, que nunca mais nos falte
 **empatia**, **amor**, **humanidade**.
 
 **Criado por [Bruno Mioto](https://github.com/brunomioto) e [Ícaro
