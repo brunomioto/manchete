@@ -40,3 +40,4 @@ if(isTRUE(grep("foto3_poder360_tier2", filelist, value = TRUE) == "screenshots/f
 }
 if(isTRUE(grep("foto4_extra_tier2", filelist, value = TRUE) == "screenshots/foto4_extra_tier2.png") == TRUE){
   bot$sendPhoto('./screenshots/foto4_extra_tier2.png')
+}
