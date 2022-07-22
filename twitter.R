@@ -2,7 +2,7 @@
 #library(httr)
 
 manchete_token <- rtweet::rtweet_bot(
-  #app = "Manchete",
+  app = "Manchete",
   api_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
   api_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
   access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
