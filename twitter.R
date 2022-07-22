@@ -1,13 +1,15 @@
 library(rtweet)
 library(httr)
 
-manchete_token <- rtweet::create_token(
-  app = "Manchete",
-  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-  consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
+manchete_token <- rtweet::rtweet_bot(
+  #app = "Manchete",
+  api_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+  api_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
   access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
   access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
+
+#rtweet::auth_as(manchete_token)
 
 ## TIER 1
 
@@ -34,6 +36,7 @@ tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
 rtweet::post_tweet(
   status = tier_1_tweet_text,
   media = tier_1_files,
+  media_alt_text = "Homepages dos portais O Globo, Folha de São Paulo, O Estado de São Paulo e G1 do dia de hoje",
   token = manchete_token
 )
 
@@ -62,5 +65,6 @@ tier_2_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
 rtweet::post_tweet(
   status = tier_2_tweet_text,
   media = tier_2_files,
+  media_alt_text = "Homepages dos portais IstoÉ, Metrópoles, Poder360 e Extra do dia de hoje",
   token = manchete_token
 )
