@@ -34,7 +34,7 @@ jobs:
 
       - name: Install packages
         run: |
-          install.packages("rtweet")    
+          install.packages("rtweet", dependencies = TRUE)   
           install.packages("httr")
         shell: Rscript {0}
     
