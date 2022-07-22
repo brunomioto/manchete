@@ -36,7 +36,10 @@ tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
 rtweet::post_tweet(
   status = tier_1_tweet_text,
   media = tier_1_files,
-  media_alt_text = "Homepages dos portais O Globo, Folha de São Paulo, O Estado de São Paulo e G1 do dia de hoje",
+  media_alt_text = c("Homepage do portal O Globo do dia de hoje",
+                     "Homepage do portal Folha de São Paulo do dia de hoje",
+                     "Homepage do portal O Estado de São Paulo do dia de hoje",
+                     "Homepage do portal G1 do dia de hoje"),
   token = manchete_token
 )
 
@@ -65,6 +68,9 @@ tier_2_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
 rtweet::post_tweet(
   status = tier_2_tweet_text,
   media = tier_2_files,
-  media_alt_text = "Homepages dos portais IstoÉ, Metrópoles, Poder360 e Extra do dia de hoje",
+  media_alt_text = c("Homepage do portal IstoÉ do dia de hoje",
+                     "Homepage do portal Metrópoles do dia de hoje",
+                     "Homepage do portal Poder360 do dia de hoje",
+                     "Homepage do portal Extra do dia de hoje"),
   token = manchete_token
 )
