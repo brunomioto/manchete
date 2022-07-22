@@ -9,7 +9,7 @@ manchete_token <- rtweet::rtweet_bot(
   access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 )
 
-rtweet::auth_as(manchete_token)
+#rtweet::auth_as(manchete_token)
 
 ## TIER 1
 
