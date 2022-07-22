@@ -1,5 +1,5 @@
-library(rtweet)
-library(httr)
+#library(rtweet)
+#library(httr)
 
 manchete_token <- rtweet::rtweet_bot(
   #app = "Manchete",
