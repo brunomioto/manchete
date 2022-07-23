@@ -76,6 +76,6 @@ tier_2_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
 
 # Post the status message to Twitter
 rtweet::post_tweet(
-  status = "Oi pessoal, o método para postar as imagens aqui mudou. Estamos fazendo uns testes e já já volta tudo ao normal!",
+  status = "Esse é um teste. Em breve voltaremos a postar!",
   token = manchete_token
 )
