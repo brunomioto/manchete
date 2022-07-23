@@ -31,16 +31,16 @@ tier_1_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
                                    "- G1\n","")
 )
 
-## Post the status message to Twitter
-#rtweet::post_tweet(
-#  status = tier_1_tweet_text,
-#  media = tier_1_files,
-#  media_alt_text = c("Homepage do portal O Globo do dia de hoje",
-#                     "Homepage do portal Folha de São Paulo do dia de hoje",
-#                     "Homepage do portal O Estado de São Paulo do dia de hoje",
-#                     "Homepage do portal G1 do dia de hoje"),
-#  token = manchete_token
-#)
+# Post the status message to Twitter
+rtweet::post_tweet(
+  status = tier_1_tweet_text,
+  media = tier_1_files,
+  media_alt_text = c("Homepage do portal O Globo do dia de hoje",
+                     "Homepage do portal Folha de São Paulo do dia de hoje",
+                     "Homepage do portal O Estado de São Paulo do dia de hoje",
+                     "Homepage do portal G1 do dia de hoje"),
+  token = manchete_token
+)
 
 ## TIER 2
 
@@ -63,19 +63,13 @@ tier_2_tweet_text <- paste0("Manchetes do dia ", format(Sys.time(), format="%d/%
                                    "- Extra\n","")
 )
 
-## Post the status message to Twitter
-#rtweet::post_tweet(
-#  status = tier_2_tweet_text,
-#  media = tier_2_files,
-#  media_alt_text = c("Homepage do portal IstoÉ do dia de hoje",
-#                     "Homepage do portal Metrópoles do dia de hoje",
-#                     "Homepage do portal Poder360 do dia de hoje",
-#                     "Homepage do portal Extra do dia de hoje"),
-#  token = manchete_token
-#)
-
 # Post the status message to Twitter
 rtweet::post_tweet(
-  status = "Esse é um teste. Em breve voltaremos a postar!",
+  status = tier_2_tweet_text,
+  media = tier_2_files,
+  media_alt_text = c("Homepage do portal IstoÉ do dia de hoje",
+                     "Homepage do portal Metrópoles do dia de hoje",
+                     "Homepage do portal Poder360 do dia de hoje",
+                     "Homepage do portal Extra do dia de hoje"),
   token = manchete_token
 )
