@@ -6,7 +6,7 @@ bot <- TGBot$new(token = bot_token('MANCHETE_BOT'))
 bot$set_default_chat_id(-1001563823686)
 
 #get file names
-req <- httr::GET("https://api.github.com/repos/brunomioto/manchete/git/trees/master?recursive=1")
+req <- httr::GET("https://api.github.com/repos/brunomioto/manchete/git/trees/master?recursive=1", config(http_version=1))
 httr::stop_for_status(req) 
 filelist <- unlist(lapply(httr::content(req)$tree, "[", "path"), use.names = F)
 
