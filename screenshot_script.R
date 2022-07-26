@@ -56,3 +56,9 @@ purrr::pwalk(
   .l = portais,
   .f = safe_paparazzi
 )
+
+# Confirma a obtenção de todas as imagens. Provoca erro em caso de imagem faltante
+paths = paste0("./screenshots/",list.files("./screenshots"))
+if (sum(portais$file %in% paths) != 8) {
+  stop("Nem todas imagens foram obtidas. Fotografando novamente...")
+}
