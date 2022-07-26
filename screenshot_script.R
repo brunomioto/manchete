@@ -11,11 +11,18 @@ portais <- tibble(
           "https://istoe.com.br/",
           "https://www.metropoles.com/",
           "https://www.poder360.com.br",
-          "https://extra.globo.com/"),
+          "https://extra.globo.com/"
+          # "https://www.r7.com",
+          # "https://veja.abril.com.br",
+          # "https://www.ig.com.br",
+          # "https://www.cartacapital.com.br"
+          ),
   nome = c("oglobo", "folha", "estadao", "g1",
-           "istoe", "metropoles", "poder360", "extra"),
+           "istoe", "metropoles", "poder360", "extra"
+           ),
   tier = c(rep("_tier1", 4),
-           rep("_tier2", 4))
+           rep("_tier2", 4)
+           )
 ) %>% 
   dplyr::group_by(tier) %>% 
   dplyr::mutate(
@@ -24,16 +31,11 @@ portais <- tibble(
   ) %>%
   dplyr::ungroup()
 
-# Separa tiers
-portais_tier1 <- portais %>%
-  dplyr::filter(tier == "_tier1") %>% 
-  dplyr::select(url, file, nome)
+# Mantem apenas variáveis a serem usadas
+portais <- portais %>% dplyr::select(url, file, nome)
 
-portais_tier2 <- portais %>%
-  dplyr::filter(tier == "_tier2") %>% 
-  dplyr::select(url, file, nome)
-
-# Cria um wrapper em torno da função de screenshot que inclui delay e torna a função "verbose"
+# Cria um wrapper em torno da função de screenshot
+# que inclui delay e torna a função "verbose"
 paparazzi <- function(url, file, nome) {
   print(paste0("Fotografando ", nome, "..."))
   
@@ -46,17 +48,11 @@ paparazzi <- function(url, file, nome) {
     print(paste0("Fotografia de ", nome, " já encontrada! Seguindo..."))
   }
   
-  Sys.sleep(5)
 }
 
-# Efetua o screenshot, um portal por vez #tier 1
+# Efetua o screenshot um portal por vez. Tenta todos portais mesmo que um falhe
+safe_paparazzi <- purrr::safely(paparazzi)
 purrr::pwalk(
-  .l = portais_tier1,
-  .f = paparazzi
-)
-
-# Efetua o screenshot, um portal por vez #tier 2
-purrr::pwalk(
-  .l = portais_tier2,
-  .f = paparazzi
+  .l = portais,
+  .f = safe_paparazzi
 )
