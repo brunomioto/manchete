@@ -4,8 +4,8 @@ library(dplyr)
 
 # Lista portais
 portais <- tibble(
-  url = c("https://www.folha.uol.com.br",
-          "https://oglobo.globo.com/",
+  url = c("https://oglobo.globo.com/",
+          "https://www.folha.uol.com.br",
           "https://www.estadao.com.br",
           "https://g1.globo.com/",
           "https://istoe.com.br/",
@@ -17,7 +17,7 @@ portais <- tibble(
           # "https://www.ig.com.br",
           # "https://www.cartacapital.com.br"
           ),
-  nome = c("folha", "oglobo", "estadao", "g1",
+  nome = c("oglobo", "folha", "estadao", "g1",
            "istoe", "metropoles", "poder360", "extra"
            ),
   tier = c(rep("_tier1", 4),
