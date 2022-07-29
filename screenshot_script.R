@@ -48,6 +48,7 @@ paparazzi <- function(url, file, nome) {
     print(paste0("Fotografia de ", nome, " já encontrada! Seguindo..."))
   }
   
+  Sys.sleep(5)
 }
 
 # Efetua o screenshot um portal por vez. Tenta todos portais mesmo que um falhe
